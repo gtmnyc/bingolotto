@@ -1,0 +1,46 @@
+<MainScreen>:
+    orientation: "vertical"
+    padding: dp(10)
+    spacing: dp(10)
+    background_color: (0, 0, 0, 1)
+
+    Label:
+        text: "[b][color=FFD700]BINGO LOTTO[/color][/b]"
+        markup: True
+        size_hint_y: None
+        height: dp(40)
+
+    Label:
+        text: "Select Numbers (1-47):"
+        color: (1, 1, 1, 1)
+        size_hint_y: None
+        height: dp(30)
+
+    GridLayout:
+        id: number_grid
+        cols: 7
+        size_hint: (1, 0.7)
+        spacing: dp(5)
+        padding: dp(5)
+
+    Button:
+        text: "Highlight"
+        background_color: (0.85, 0.65, 0, 1)
+        bold: True
+        size_hint_y: None
+        height: dp(50)
+        on_release: root.highlight_selected()
+
+    Button:
+        text: "Clear Selection"
+        background_color: (0.5, 0.5, 0.5, 1)
+        size_hint_y: None
+        height: dp(50)
+        on_release: root.clear_selection()
+
+    Button:
+        text: "Reset Board"
+        background_color: (1, 0, 0, 1)
+        size_hint_y: None
+        height: dp(50)
+        on_release: root.reset_board()
